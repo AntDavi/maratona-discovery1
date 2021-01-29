@@ -13,32 +13,35 @@ const modal = {
     }
 }
 
-const transactions = [
-    {
-        id: 1,
-        description: 'Luz',
-        amount: -50000,
-        date: '23/01/2021'
-    },
-    {
-        id: 2,
-        description: 'Website',
-        amount: 500000,
-        date: '23/01/2021'
-    },
-    {
-        id: 3,
-        description: 'Internet',
-        amount: -20000,
-        date: '23/01/2021'
-    },
-]
-
 const Transaction = {
-    all: transactions,
+    all: [
+        {
+            description: 'Luz',
+            amount: -50000,
+            date: '23/01/2021'
+        },
+        {
+            description: 'Website',
+            amount: 500000,
+            date: '23/01/2021'
+        },
+        {
+            description: 'Internet',
+            amount: -20000,
+            date: '23/01/2021'
+        },
+    ],
 
-    add(transaction){
+    add(transaction) {
         Transaction.all.push(transaction)
+
+        App.reload()
+    },
+
+    remove(index) {
+        Transaction.all.splice(index, 1)
+
+        App.reload()
     },
 
     incomes () {
@@ -105,6 +108,10 @@ const DOM = {
             .getElementById('totalDisplay')
             .innerHTML = Utils.formatCurrency(Transaction.total())
     },
+
+    clearTransaction() {
+        DOM.transactionsContainer.innerHTML = ""
+    },
     
 }
 
@@ -125,8 +132,27 @@ const Utils = {
     }
 }
 
-transactions.forEach(function(transaction) {
-    DOM.addTransaction(transaction)
-})
+const Form = {
+    submit(event) {
+        event.preventDefault()
+    }
+}
 
-DOM.updateBalance()
+const App = {
+    init () {
+
+        Transaction.all.forEach(transaction => {
+            DOM.addTransaction(transaction)
+        })
+        
+        DOM.updateBalance()
+    },
+
+    reload () {
+        DOM.clearTransaction()
+        App.init()
+    },
+}
+
+App.init()
+
