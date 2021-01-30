@@ -116,6 +116,15 @@ const DOM = {
 }
 
 const Utils = {
+    formatAmount(value) {
+        value = Number(value) * 100
+
+        return value;
+    },
+    formatDate(date) {
+        const splitteDate = date.split("-")
+        return `${splitteDate[2]}/${splitteDate[1]}/${splitteDate[0]}`
+    },
     formatCurrency (value) {
         const signal = Number(value) < 0 ? "-" : ""
 
@@ -157,6 +166,27 @@ const Form = {
         }
     },
 
+    formatValues() {
+        let { description, amount, date} = Form.getValues()
+
+        amount = Utils.formatAmount(amount)
+
+        date = Utils.formatDate(date)
+
+        return {
+            description,
+            amount,
+            date
+        }
+    },
+
+    clearFields () {
+        Form.description.value=""
+        Form.amount.value=""
+        Form.date.value=""
+    },
+
+
     submit(event) {
         event.preventDefault()
 
@@ -164,10 +194,13 @@ const Form = {
             //Verificar se todas as informaçõe foram preenchidas
             Form.validateField()
             // formatar os dados para salvar
+            const transaction = Form.formatValues()
             //salvar
+            Transaction.add(transaction)
             //apagar os dados do formulario
+            Form.clearFields()
             // fechar Modal
-            //Atualizar aplicação
+            modal.close()
         } catch (error) {
             alert(error.message);
         }
