@@ -3,7 +3,7 @@ Projeto criado durante a Maratona Discovery da Rocketseat
 
 <p align="center">
   <a href="">
-    
+    <img src="/assets/gravação_de_tela.gif">
   </a>
 </p>
 
