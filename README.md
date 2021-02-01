@@ -17,8 +17,9 @@
 
 <h4 align="center"> 
 	🚧  Completo  🚧
-	[![Netlify Status](https://api.netlify.com/api/v1/badges/2f786fa9-6917-49e1-a73b-4c28a8645ee8/deploy-status)](https://app.netlify.com/sites/devfinance/deploys)
 </h4>
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/2f786fa9-6917-49e1-a73b-4c28a8645ee8/deploy-status)](https://app.netlify.com/sites/devfinance/deploys)
 
 <p align="center">
   <a href="">
