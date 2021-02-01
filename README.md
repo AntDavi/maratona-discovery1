@@ -19,7 +19,7 @@
 
 ### 🚀 Objetivos
 
-O dev.finance$ é uma apicação web que tem como principal objetivo ajudar na organização e da vida financeira. Podendo armazenar as entradas e saídas
+O dev.finance$ é uma aplicação web que tem como principal objetivo ajudar na organização da vida financeira. Podendo armazenar as entradas e saídas
 de dinheiro assim como fazer o calculo das mesmas.
 
 <p align="center">
