@@ -1,5 +1,3 @@
-# Dev.Finance$
-
 <p align="center">
   <a href="">
     <img src="/assets/logo.svg">
