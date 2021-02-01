@@ -8,5 +8,5 @@ Projeto criado durante a Maratona Discovery da Rocketseat
 </p>
 
 <p align="center">
-Orgulhosamente feito por Anthony Davi
+Orgulhosamente feito por Anthony Davi &#128156;
 </p>
