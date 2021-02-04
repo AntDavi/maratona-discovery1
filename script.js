@@ -63,6 +63,42 @@ const Transaction = {
     },
 }
 
+const Wallet = {
+    extract() {
+        const transactions = Transaction.all;
+        const incomes = Transaction.incomes();
+        const expenses = Transaction.expenses();
+        const total = Transaction.total();
+     
+        const currentDate = new Date();
+     
+        const date = {
+          day: currentDate.getDay(),
+          month: currentDate.getMonth() + 1,
+          year: currentDate.getFullYear(),
+          hours: currentDate.getHours(),
+          minutes: currentDate.getMinutes(),
+          seconds: currentDate.getSeconds(),
+        };
+     
+        let text = `Extrato - Data: ${`${date.day}/${date.month}/${date.year} - ${date.hours}:${date.minutes}:${date.seconds}\n`}`;
+     
+        text += transactions.reduce(
+          (txt, transaction) =>
+            (txt += `\n${transaction.date} - ${
+              transaction.description
+            }       ${Utils.formatCurrency(transaction.amount)}`),
+          ""
+        );
+     
+        text += `\n\nEntradas:        ${Utils.formatCurrency(incomes)}`;
+        text += `\nSaídas:          ${Utils.formatCurrency(expenses)}`;
+        text += `\nTotal:           ${Utils.formatCurrency(total)}`;
+     
+        Utils.downloadFile(text, "extrato.txt", "application/text");
+    }
+}
+
 const DOM = {
     transactionsContainer: document.querySelector('#data-table tbody'),
 
@@ -134,7 +170,18 @@ const Utils = {
         })
 
         return signal + value
-    }
+    },
+    downloadFile(data, name, type) {
+        const blob = new Blob([data], {
+          type: type,
+        });
+        const link = window.document.createElement("a");
+        link.href = window.URL.createObjectURL(blob);
+        link.download = `${name.trim().replace(/ +/g, "-")}`;
+        link.click();
+        window.URL.revokeObjectURL(link.href);
+        return;
+    },
 }
 
 const Form = {

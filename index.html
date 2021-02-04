@@ -56,7 +56,16 @@
         <section id="transaction">
             <h2 class="sr-only">Transações</h2>
 
-            <a href="#" onclick="modal.open()" class="buttom new">+ Nova Transações</a>
+            <div id="options-transactions">
+                <a href="#" class="button new" onclick="Modal.toggle('transaction')">
+                  + Nova Transação
+                </a>
+              
+                <a href="#" class="button extract" onclick="Wallet.extract()">
+                  <img src="./assets/get_app-24px.svg" alt="Gerar Extrato" />
+                  <span>Gerar extrato</span>
+                </a>
+            </div>
 
             <table id="data-table">
                 <thead>

@@ -4,6 +4,9 @@
     --green: #49aa26;
     --light-green: #3dd705;
     --red: #e92929;
+    --font-color-base: #363f5f;
+    --svg-filter: invert(30%) sepia(79%) saturate(2476%) hue-rotate(100deg)
+      brightness(118%) contrast(119%);
 }
 
 * {
@@ -52,6 +55,26 @@ a {
     color: #49aa26;
     text-decoration: none;
     transition: 0.3s;
+}
+
+#options-transactions {
+    display: flex;
+    margin-bottom: 0.8rem;
+    justify-content: space-between;
+  }
+  
+#options-transactions img {
+    filter: var(--svg-filter);
+}
+  
+a.button.extract {
+    color: var(--font-color-base);
+    display: flex;
+    align-items: center;
+}
+  
+a.button.extract:hover {
+    filter: brightness(150%);
 }
 
 button {

@@ -25,7 +25,7 @@
 ### 🚀 Objetivos
 
 O dev.finance$ é uma apicação web que tem como principal objetivo ajudar na organização e da vida financeira. Podendo armazenar as entradas e saídas
-de dinheiro assim como fazer o calculo das mesmas.
+de dinheiro assim como fazer o calculo das mesmas e gerar um extrato em .txt de nossas contas. 
 
 <p align="center">
   <a href="">
