@@ -1,10 +1,12 @@
 /*Global */
 :root {
-    --color-dark: #363f5f;
-    --green: #49aa26;
-    --light-green: #3dd705;
-    --red: #e92929;
-    --font-color-base: #363f5f;
+    --font-color-base: #363F5F;
+    --green: #49AA26;
+    --light-green: #3DD705;
+    --expense-color: #E92929;
+    --light-color-base: #FFF;
+    --background-color-header: #2D4A22;
+    --background-color: #F0F2F5;
     --svg-filter: invert(30%) sepia(79%) saturate(2476%) hue-rotate(100deg)
       brightness(118%) contrast(119%);
 }
@@ -20,7 +22,7 @@ html {
 }
 
 body {
-    background: #f0f2f5;
+    background: var(--background-color);
     font-family: 'Poppins', sans-serif;
 }
 
@@ -52,7 +54,7 @@ h2 {
 
 /* Link and buttons */
 a {
-    color: #49aa26;
+    color: var(--green);
     text-decoration: none;
     transition: 0.3s;
 }
@@ -114,18 +116,18 @@ button:hover {
 }
 
 a:hover {
-    color: #3dd705;
+    color: var(--light-green);
 }
 
 /*Header */
 header {
-    background: #2d4a22;
+    background: var(--background-color-header);
     padding: 2rem 0 10rem;
     text-align: center;
 }
 
 #logo {
-    color: #fff;
+    color: var(--light-color-base);
     font-weight: 100;
 }
 
@@ -136,7 +138,7 @@ header {
 }
 
 #balance h2 {
-    color: #fff;
+    color: var(--light-color-base);
     margin-top: 0;
 }
 
@@ -224,7 +226,7 @@ td.income {
 }
 
 td.expense {
-    color: #e92929;
+    color: var(--expense-color);
 }
 
 /*Modal */
@@ -313,4 +315,5 @@ footer {
         gap: 2rem;
     }
 }
+
 
