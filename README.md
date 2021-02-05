@@ -10,10 +10,6 @@
 
 <p align="center">🚀Projeto criado durante a Maratona Discovery da Rocketseat</p>
 
-<p align="center">
- <a href="#objetivo">Objetivo</a> •
- <a href="#tecnologias">Tecnologias</a>
-</p>
 
 <h4 align="center"> 
 	🚧  Completo  🚧
