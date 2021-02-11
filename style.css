@@ -1,12 +1,12 @@
 /*Global */
 :root {
     --font-color-base: #363F5F;
-    --green: #49AA26;
-    --light-green: #3DD705;
+    --green: #33771a;
+    --light-green: #2f910b;
     --expense-color: #E92929;
-    --light-color-base: #FFF;
-    --background-color-header: #2D4A22;
-    --background-color: #F0F2F5;
+    --light-color-base: #ffffff;
+    --background-color-header: #192b12;
+    --background-color: #d4d4d4;
     --svg-filter: invert(30%) sepia(79%) saturate(2476%) hue-rotate(100deg)
       brightness(118%) contrast(119%);
 }
@@ -145,7 +145,7 @@ header {
 /*cards*/
 
 .card {
-    background: white;
+    background: var(--light-color-base);
     padding: 1.5rem 2rem;
     border-radius: 0.25rem;
     margin-bottom: 2rem;
@@ -169,7 +169,7 @@ header {
 
 .card.total {
     background: #49aa26;
-    color: white;
+    color: var(--light-color-base);
 }
 
 /*table */
@@ -197,7 +197,7 @@ table tbody tr td:last-child {
 }
 
 table th {
-    background: white;
+    background: var(--light-color-base);
     font-weight: normal;
     padding: 1rem 2rem;
     text-align: left;
@@ -212,7 +212,7 @@ table tbody tr:hover {
 }
 
 table td {
-    background: white;
+    background: var(--light-color-base);
 
     padding: 1rem 2rem;
 }
@@ -300,6 +300,12 @@ footer {
     padding: 3rem 0 2rem;
     color: var(--color-dark);
     opacity: 0.6;
+}
+
+footer img{
+    
+    width: 20px;
+    height: 20px;
 }
 
 /*Responsive */
